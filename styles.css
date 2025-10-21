@@ -1,0 +1,267 @@
+/* Layout justification:
+   Flexbox is used for the two-column layout because it allows flexible alignment and wrapping of sections.
+   It adapts well to dynamic content sizes and maintains semantic structure without requiring grid rows.
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --max-width-9212: 480px;
+  --clr-bg-9212: #000;
+  --clr-accent-9212: #007acc;
+  --clr-main-9212: #fff;
+  --clr-muted-9212: #ccc;
+  --clr-success-9212: #2e7d32;
+  --clr-warning-9212: #f57c00;
+
+  --font: 1rem;
+  --font-xl: 1.2rem;
+  --font-2xl: 1.4rem;
+  --font-3xl: 2rem;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 0 1em;
+  background-color: var(--clr-bg-9212);
+  color: var(--clr-main-9212);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+img{
+    max-width: 100%;
+}
+
+#main-parent {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0;
+}
+
+header h1 {
+  font-size: var(--font-3xl);
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.live-analytics {
+  background-color: #f5f7fa;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin: 10px 0;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.live-analytics p {
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.live-analytics span {
+  font-weight: 600;
+  color: var(--clr-accent-9212);
+}
+
+#done-count {
+  color: var(--clr-success-9212);
+}
+
+#active-count {
+  color: var(--clr-warning-9212);
+}
+
+nav {
+  margin: 1em 0;
+  padding: 1em;
+  border-radius: 6px;
+}
+
+nav fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav legend {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+nav label {
+  margin-right: 1em;
+  font-size: var(--font-xl);
+  cursor: pointer;
+}
+
+nav input[type="radio"] {
+  margin-right: 0.3em;
+}
+
+nav input[type="radio"]:focus,
+button:focus {
+  outline: 2px solid var(--clr-accent-9212);
+  outline-offset: 2px;
+}
+
+.control {
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  background-color: #fff;
+  color: #000;
+}
+
+#add-task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#add-task-form label {
+  font-size: var(--font-2xl);
+  font-weight: 600;
+}
+
+#task-input {
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid var(--clr-muted-9212);
+  border-radius: 6px;
+  transition: border-color 0.2s ease;
+}
+
+#task-input:focus {
+  border-color: var(--clr-accent-9212);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 122, 204, 0.2);
+}
+
+#add-btn-9212 {
+  background-color: var(--clr-accent-9212);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#add-btn-9212:hover {
+  background-color: #005fa3;
+}
+
+.task-section h2 {
+  font-size: var(--font-2xl);
+  margin-top: 1em;
+}
+
+.task-section section {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.task-section section ol {
+  padding: 1em 2em;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgb(112, 111, 111);
+  color: #000;
+}
+
+.task-section ol li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8em;
+  margin-bottom: 0.5em;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fefefe;
+}
+
+.action-btn button {
+  margin-left: 0.5em;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--clr-accent-9212);
+  color: white;
+  cursor: pointer;
+}
+
+.action-btn button:hover {
+  background-color: #005fa3;
+}
+
+/* Card styling  */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 1px solid var(--clr-muted-9212);
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  color: #000;
+}
+
+
+.category-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--clr-accent-9212);
+  background-color: #e6f2ff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.card .title {
+  font-size: var(--font-xl);
+  font-weight: 500;
+  color: #222;
+}
+
+.card .action-btn {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5em;
+}
+
+
+
+/* Media queries */
+@media (min-width: 481px) {
+  .task-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+  }
+
+  .task-section section {
+    width: 48%;
+  }
+}

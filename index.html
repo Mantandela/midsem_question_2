@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opportunity Board 9212</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div id="main-parent">
+
+    <header role="banner">
+      <h1>Opportunity Board 9212</h1>
+      <div id="live-analytics" class="live-analytics">
+        <p>
+          Total: <span id="total-count">0</span>
+          &nbsp;|&nbsp; Available: <span id="active-count">0</span>
+          &nbsp;|&nbsp; Saved: <span id="done-count">0</span>
+        </p>
+      </div>
+    <figure>
+        <img src="./opportunity.jpeg"  alt="image showing a man announcing Opportunities ">
+    </figure>
+    </header>
+    
+    <nav aria-label="Opportunity filters">
+      <fieldset>
+        <legend>Filter Opportunities</legend>
+        <label>
+          <input type="radio" name="filter" value="all" checked />
+          All
+        </label>
+        <label>
+          <input type="radio" name="filter" value="internship" />
+          Internships
+        </label>
+        <label>
+          <input type="radio" name="filter" value="scholarship" />
+          Scholarships
+        </label>
+      </fieldset>
+    </nav>
+
+    <main id="main-9212">
+      <div class="control">
+        <form id="add-task-form" aria-label="Add opportunity">
+          <label for="task-input">Add Opportunity</label>
+          <div>
+            <input
+              type="text"
+              id="task-input"
+              name="task"
+              required
+              placeholder="Enter opportunity title"
+            />
+            <button type="submit" id="add-btn-9212">Add</button>
+          </div>
+          <span class="err-msg" id="err-msg"></span>
+        </form>
+      </div>
+
+      <div class="task-section">
+        <section aria-labelledby="active-heading">
+          <h2 id="active-heading">Available</h2>
+          <ol id="active-list"></ol>
+        </section>
+
+        <section aria-labelledby="done-heading">
+          <h2 id="done-heading">Saved</h2>
+          <ol
+            id="done-list"
+            aria-live="polite"
+            aria-relevant="additions removals"
+          ></ol>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
